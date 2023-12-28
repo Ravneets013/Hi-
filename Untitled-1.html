@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Date Proposal</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fdd3e4; /* Light pink background */
+    }
+
+    #container {
+      position: relative;
+    }
+
+    #teddyBearImage {
+      width: 300px;
+      height: 300px;
+    }
+
+    #buttonsContainer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #yesButton {
+      background-color: #ffb6c1; /* Light pink button */
+      color: #fff;
+    }
+
+    #noButton {
+      background-color: #ffc0cb; /* Light pink button */
+      color: #fff;
+    }
+
+    #happyTeddyBear {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #celebrationText {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff69b4; /* Hot pink text color */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h2>Would you like to go on a date with me?</h2>
+    <img id="teddyBearImage" src="https://media3.giphy.com/media/l0O9xrBecp7Tfu0eY/200w.webp?cid=ecf05e4719rgpz0704ufkqijcudv7lf5vzjjxjsajmqv0e7u&ep=v1_gifs_search&rid=200w.webp&ct=g" alt="Cute Teddy Bear">
+    <div id="buttonsContainer">
+      <button id="yesButton" class="button" onclick="celebrate()">Yes</button>
+      <button id="noButton" class="button" onclick="moveNoButton()">No</button>
+    </div>
+    <img id="happyTeddyBear" src="https://media3.giphy.com/media/20NDgRLTSWRuwOQmUo/200.webp?cid=ecf05e477bk2hw4c368mkd7ksqyu9px9eyfwb9wyar49yovs&ep=v1_gifs_search&rid=200.webp&ct=g" alt="Happy Teddy Bear">
+    <div id="celebrationText"></div>
+  </div>
+
+  <script>
+    function moveNoButton() {
+      var noButton = document.getElementById('noButton');
+      var container = document.getElementById('container');
+      
+      var newX = Math.floor(Math.random() * (container.clientWidth - noButton.clientWidth));
+      var newY = Math.floor(Math.random() * (container.clientHeight - noButton.clientHeight));
+  
+      noButton.style.left = newX + 'px';
+      noButton.style.top = newY + 'px';
+    }
+  
+    function celebrate() {
+      // Navigate to a new webpage
+      window.location.href = "celebration.html";
+    }
+  </script>
+</body>
+</html>
